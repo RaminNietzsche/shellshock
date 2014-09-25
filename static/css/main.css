@@ -1,0 +1,313 @@
+img.bg {
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+	
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:-10;
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	/* this will work for QtWebKit in future */
+	-webkit-user-drag: none;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+	img.bg {
+		left: 50%;
+		margin-left: -512px;   /* 50% */
+	}
+}
+
+input,button,.alert,.hero-unit,.btn,select,.thumbnail
+{
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important; 
+}
+
+select
+{
+	font-size: 11px;
+}
+
+@font-face {
+    font-family: 'Nassim';
+    src:url('font/bbc-nassim-regular.eot?#') format('eot'),    
+          url('font/bbc-nassim-regular.woff') format('woff'),
+          url('font/bbc-nassim-regular.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src:url('font/BYekan.eot?#') format('eot'),    
+          url('font/BYekan.woff') format('woff'),
+          url('font/BYekan.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'droid';
+    src:url('font/DroidNaskh.ttf') format('truetype'); 
+}
+
+h1,h2,h3,h4,h5,h6,label,button,.hero-unit,tspan,.btn,.nav,.dropdown-menu,.font
+{
+	font-family: 'droid';
+	font-weight: normal;
+}
+
+tspan
+{
+	font-family: 'droid';
+}
+
+hr
+{
+	margin: 0;
+}
+
+body,html
+{
+	font-family: "droid";
+	font-size: 11px;
+	height: 100%;
+	cursor: default;
+}
+
+h2 .sub-title
+{
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	background: #ccc;
+	color: #fff;
+	vertical-align: middle;
+	margin-right: 10px;
+	text-shadow: 1px 1px 0px #999;
+}
+
+
+
+#wrapper
+{
+	min-height: 100%;
+    height: auto !important;
+    height: 100%;
+	direction: rtl;
+	margin: 0 auto -80px;
+
+}
+
+#page-content
+{
+	padding-top: 60px;
+}
+
+#push,
+#footer {
+	height: 80px;
+}
+
+#footer {
+	border-top: 1px solid #eee;
+	background-color: #f5f5f5;
+	direction: rtl;
+}
+
+#footer .container
+{
+	background: url("../images/logo.png") no-repeat right 50%;
+	height: 80px;
+}
+
+#footer .footer-content
+{
+	padding-top: 10px;
+	margin-right: 160px;
+}
+
+#footer .navigation
+{
+	color: #777;
+}
+
+#footer .navigation a
+{
+	color:#999;
+}
+
+#footer .navigation a:hover
+{
+	color:#339933;
+}
+
+#view
+{
+	direction: rtl;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto; /* this requires a fixed size */
+/*	width: 85%;
+	height: 90%;
+*/	background: #fff;
+
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2); 
+}
+
+#view .alert
+{
+	margin-bottom: 0;
+}
+
+#view h1
+{
+	color: #666;
+	font-weight: normal;
+	font-size: 25px;
+	background:#f9f9f9; 
+	padding: 10px;
+	margin: 0;
+}
+
+#view .control-group
+{
+	padding-right: 25px;
+}
+
+#view .form-actions .checkbox
+{
+	padding-top: 5px;
+}
+
+
+.navbar-inverse .navbar-inner
+{
+	background-image:none;
+	background-color: #f2f2f2 !important;
+    background-image: linear-gradient(to bottom, #f2f2f2, #eeeeee);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffeeeeee', GradientType=0);
+	border-color: #d4d4d4;
+}
+
+.navbar
+{
+	font-family: "Nassim";
+}
+
+.navbar .brand
+{
+	float:right;
+	color: #000;
+	font-size: 22px;
+	margin-left: 10px;
+}
+
+.navbar .slogan
+{
+	float: right;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.navbar .nav
+{
+	float: left;
+	margin-left: -20px;
+	font-size: 15px;
+}
+
+.navbar .nav > li
+{
+	float: right;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a
+{
+	text-shadow: 0 1px 0 #fff;	
+}
+
+.navbar .nav li:first-child a
+{
+	border-right: 1px solid #d4d4d4;
+}
+
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus
+{
+	color: #fff;
+	text-shadow: 0 1px 0 #999;	
+}
+
+.navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover
+{
+	background-color: #a0a0a0 !important;
+	color: #fff;
+	text-shadow: 0 1px 0 #999;
+}
+
+.navbar a
+{
+	padding: 10px 10px !important;
+	border-left: 1px solid #d4d4d4;	
+}
+
+.navbar .nav a:hover
+{
+	background-color: #a0a0a0 !important;
+	color: #fff;
+	text-shadow: 0 1px 0 #999;
+}
+
+.navbar-inverse .nav > li > a
+{
+	color:#a0a0a0;
+}
+
+.navbar-inverse .nav .active a
+{
+	background-color: #a0a0a0;
+}
+
+.navbar-inverse .nav .profile a
+{
+	position: relative;
+	border-left: 0;
+	padding-right: 43px !important;
+	cursor: default;
+}
+
+.navbar-inverse .nav .profile a:hover
+{
+	background:#F2F2F2 !important;
+	color: #A0A0A0;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.nav .profile img
+{
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	right: 5px;
+	top:3px;
+	border:1px solid #ddd;
+}
+
+.navbar-inverse .brand:hover
+{
+	color:#000;
+}
+

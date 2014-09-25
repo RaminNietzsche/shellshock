@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>ShellShock Check!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.78">
+		<meta name="author" content="Ramin Najjarbashi">
+		<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+		<link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet">
+		<link href="{{url_for('static', filename='css/bootstrap-responsive.css')}}" rel="stylesheet">
+		<script src="{{url_for('static', filename='js/jquery-1.js')}}"></script>
+		<script src="{{url_for('static', filename='js/main.js')}}"></script>
+		<script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+
+	<style>
+
+		/* http://css-tricks.com/perfect-full-page-background-image/ */
+		html {
+			background: url({{url_for('static', filename='images/bg.jpg')}}) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		body {
+			padding-top: 20px;
+			font-size: 16px;
+			font-family: "droid",serif;
+			background: transparent;
+		}
+
+		h1 {
+			font-family: "droid", Arial, sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+		}
+
+		/* Override B3 .panel adding a subtly transparent background */
+		.panel {
+			background-color: rgba(255, 255, 255, 0.9);
+			border-radius: 5px;
+			o-border-radius: 5px- ;
+			webkit-border-radus: 5px- ;
+			moz-border-radius-: 5px- ;
+		}
+
+		.margin-base-vertical {
+			margin: 40px 0;
+		}
+
+	</style>
+</head>
+
+<body dir="rtl"> 
+<center>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span6 offset3 panel panel-default">
+
+				<h2 class="margin-base-vertical">آیا این سرور از ShellShock رنج می‌برد؟</h2>
+
+				<p>
+				{% if not msg %}
+					{% if status %}
+						این سرور داری مشکل می‌باشد.
+					{% else %}
+						مشکلی یافت نشد.
+					{% endif %}
+				{% else %} 
+						خطای سرور: {{msg}}					
+				{% endif %}
+				</p>
+
+
+
+				<div class="margin-base-vertical">
+					<a href='https://github.com/RaminNietzsche/shellshock'><img src="{{url_for('static', filename='images/github_icon.png')}}"></a>
+					<a href='http://http://ossolutions.ir/'><img src="{{url_for('static', filename='images/pos_icon.png')}}"></a>
+				</div>
+
+			</div><!-- //main content -->
+		</div><!-- //row -->
+	</div> <!-- //container -->
+</center>
+
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>ShellShock Check!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.78">
+		<meta name="author" content="Ramin Najjarbashi">
+		<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+		<link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet">
+		<link href="{{url_for('static', filename='css/bootstrap-responsive.css')}}" rel="stylesheet">
+		<script src="{{url_for('static', filename='js/jquery-1.js')}}"></script>
+		<script src="{{url_for('static', filename='js/main.js')}}"></script>
+		<script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+
+	<style>
+
+		/* http://css-tricks.com/perfect-full-page-background-image/ */
+		html {
+			background: url({{url_for('static', filename='images/bg.jpg')}}) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		body {
+			padding-top: 20px;
+			font-size: 16px;
+			font-family: "droid",serif;
+			background: transparent;
+		}
+
+		h1 {
+			font-family: "droid", Arial, sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+		}
+
+		/* Override B3 .panel adding a subtly transparent background */
+		.panel {
+			background-color: rgba(255, 255, 255, 0.9);
+			border-radius: 5px;
+			o-border-radius: 5px- ;
+			webkit-border-radus: 5px- ;
+			moz-border-radius-: 5px- ;
+		}
+
+		.margin-base-vertical {
+			margin: 40px 0;
+		}
+
+	</style>
+</head>
+
+<body dir="rtl" onload="$('#AboutMe').modal('show')"> 
+<center>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span6 offset3 panel panel-default">
+
+				<h2 class="margin-base-vertical">آیا این سرور از ShellShock رنج می‌برد؟</h2>
+
+				<p>
+					برای پی بردن به این موضوع آدرسِ cgi-bin سرورِ موردِ نظر را وارد کنید.
+				</p>
+				<p>
+					مثلا وارد کنید:
+				</p>
+
+				<p>
+					http://example.com/cgi-bin/hi
+				</p>
+
+				<form class="margin-base-vertical" method="post" action="{{ url_for('check') }}">
+					<div class="control-group" dir='ltr'>
+					  <label class="control-label" for="url_check">آدرس سرور:</label>
+					  <div class="controls">
+					    <div class="input-prepend">
+					      <span class="add-on"><i class="icon-fire"></i></span>
+					      <input name="url_check" type="text">
+					    </div>
+					  </div>
+					</div>
+					<p class="text-center">
+						<button type="submit" class="btn btn-success btn-lg">کنترل کن</button>
+					</p>
+					<p class="help-block text-center"><small>مطمئن باشید این داده‌ها ذخیره نمی‌شوند!</small></p>
+					</span>
+				</form>
+
+				<div class="margin-base-vertical">
+					<a href='https://github.com/RaminNietzsche/shellshock'><img src="{{url_for('static', filename='images/github_icon.png')}}"></a>
+					<a href='http://http://ossolutions.ir/'><img src="{{url_for('static', filename='images/pos_icon.png')}}"></a>
+				</div>
+
+			</div><!-- //main content -->
+		</div><!-- //row -->
+	</div> <!-- //container -->
+</center>
+
+<div id="AboutMe" class="modal hide fade" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="myModalLabel">توضیحات</h3>
+</div>
+<div class="modal-body">
+<p>
+این سرویس برای مکنترل راحتِ سرور‌ها به‌وجود آمده و پروژه‌ای آزاد و برایِ تقریح می‌باشد.<br>
+این سرویس برایِ استفاده‌یِ اخلاقی ارایه شده و اگر کسی سعی کند به‌وسیله‌یِ این سرویس به سرورهایِ دیگران صدمه برساند خیلی آدمِ بی‌جنبه و خری است و به ما مربوط نیست که آدم‌ها چطور از این سرویس استفاده می‌کنند، این موضوع بینِ افراد و وجدانِ آنهاست :)<br>
+باگ ShellShock یکی از خطرناک‌ترین باگ‌ها می‌باشد و امتیاز ۱۰ از ۱۰ را در خطرناک بودن کسب کرده. با استفاده از این باگ، مهاجم می‌تواند به راحتی هر اسکریپتی را بر رویِ سرور اجرا کند بدونِ نیاز به اعتبار سنجی و امثالهم. برایِ رفعِ این اشکال کافی‌ست سرور را به‌روزرسانی کنید. این باگ از طریق cgi-bin عمل می‌کند.<br>
+برایِ تست کردنِ سرور، آدرسِ cgi-bin موردِ نظر را کاملا وارد کنید تا مشخص شود که سرورِ موردِ نظر دارای اشکال‌ می‌باشد یا خیر.<br>
+<center><a href='{{url_for('static', filename='new.ogv')}}'> فیلم آموزشی <center>
+</p>
+</div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55171846-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
